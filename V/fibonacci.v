@@ -1,7 +1,7 @@
 import time
 
 fn main() {
-	start := time.new_stopwatch({})
+	start := time.new_stopwatch()
 
 	for i := 1; i <= 50; i++ {
 		println("$i ${fib(i)}")

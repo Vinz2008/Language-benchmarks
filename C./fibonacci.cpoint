@@ -1,0 +1,20 @@
+import @std/time.cpoint
+
+extern printf(format : i8 ptr ...);
+
+func fib(n : int) i64 {
+    if n <= 1 {
+        n
+    } else {
+        fib(n-1) + fib(n-2)
+    }
+}
+
+func main(){
+    var start : i64 = time::get()
+    for i = 1, i <= 50, 1.0 {
+        printf("%f %lli\n", i, fib(i))
+    }
+    var time : double = time::get() - start
+    printf("Completed in: %.3fs\n", time/1000)
+}

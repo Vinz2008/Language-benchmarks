@@ -1,2 +1,5 @@
 *.exe
 Rust/target
+*.ll
+*.o
+*.out
