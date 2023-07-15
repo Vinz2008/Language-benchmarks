@@ -1,7 +1,7 @@
 import time
 
 fn main() {
-	start := time.new_stopwatch({})
+	start := time.new_stopwatch()
 
     mut primes := []int{}
     

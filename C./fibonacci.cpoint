@@ -17,4 +17,5 @@ func main(){
     }
     var time : double = time::get() - start
     printf("Completed in: %.3fs\n", time/1000)
+    0
 }

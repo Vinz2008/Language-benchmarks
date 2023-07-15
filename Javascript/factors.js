@@ -11,3 +11,6 @@ function factors() {
 	
 	console.log(`Time taken: ${(performance.now()-start)/1000}s`);
 }
+
+//module.exports.factors = factors;
+// for NodeJS
