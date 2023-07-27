@@ -14,7 +14,7 @@ func main(){
             }
         }
         if factors == 2 {
-            primes[primes_length] = i
+            primes[primes_length] = cast int i
             primes_length = primes_length + 1
             var nb_ints = primes_length+1
             primes = gc_realloc(primes,  nb_ints * sizeof int)
@@ -24,6 +24,6 @@ func main(){
 		printf("%i ", primes[i])
 	}
     var time : double = time::get() - start
-    printf("\nCompleted in: %.3fs", time/1000)
+    printf("\nCompleted in: %.3fs\n", time/1000)
     0
 }
