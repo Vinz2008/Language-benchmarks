@@ -16,5 +16,5 @@ function fib(n) {
 	}
 }
 
-//module.exports.fibonacci = fibonacci;
+module.exports.fibonacci = fibonacci;
 // for NodeJS

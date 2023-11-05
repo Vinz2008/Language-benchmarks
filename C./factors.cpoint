@@ -11,7 +11,7 @@ func main(){
             printf("%f is a factor of %li\n", i, num)
         }        
     }
-    var time : double = time::get() - start
-    printf("Completed in: %.3fs", time/1000)
+    var time_nb : double = time::get() - start
+    printf("Completed in: %.3fs", time_nb/1000)
     0
 }
