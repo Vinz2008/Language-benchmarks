@@ -6,9 +6,9 @@ extern printf(format : i8 ptr ...);
 func main(){
     var start : i64 = time::get()
     var num : i64 = 2000000000
-    for i = 1, i < num+1, 1.0 {
+    for i : i64 = 1, i < num+1, 1.0 {
         if num % i == 0 {
-            printf("%f is a factor of %li\n", i, num)
+            printf("%d is a factor of %li\n", i, num)
         }        
     }
     var time_nb : double = time::get() - start
