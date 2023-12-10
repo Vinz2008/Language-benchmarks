@@ -1,8 +1,7 @@
-import Data.Time.Clock
-import Text.Printf
+import Data.Time.Clock.POSIX
 
-diffTimeToSeconds :: DiffTime -> Integer
-diffTimeToSeconds = floor . toRational
+getTime :: IO Integer
+getTime = round . (* 1000) <$> getPOSIXTime
 
 for list action = mapM_ action list
 
@@ -12,9 +11,8 @@ fib n = fib (n - 1) + fib (n - 2)
 
 main :: IO ()
 main = do
-    let start = diffTimeToSeconds
-    for [0..20] (\ i -> do
-        print $ i
-        print $ fib i
-        )
-    printf "Completed in : %.3fs" start
+    start <- getTime
+    mapM_ (\i -> putStrLn $ show i ++ " " ++ show (fib i)) [1..50]
+    end <- getTime
+    let time = fromIntegral (end - start) / 1000
+    putStrLn $ "Completed in: " ++ show time ++ "s"
