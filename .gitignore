@@ -4,3 +4,4 @@ Rust/target
 *.o
 *.out
 *.s
+out.c

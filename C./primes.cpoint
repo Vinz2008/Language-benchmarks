@@ -1,6 +1,6 @@
 import @std/time.cpoint
 
-extern printf(format : i8 ptr ...);
+extern printf(format : i8 ptr ...) int;
 
 func main(){
     var start : i64 = time::get()
