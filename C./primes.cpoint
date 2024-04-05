@@ -1,28 +1,38 @@
 import @std/time.cpoint
 
 extern printf(format : i8 ptr ...) int;
+extern gc_free(s : void ptr) void;
 
 func main(){
     var start : i64 = time::get()
-    var primes : int ptr = gc_malloc(1 * sizeof int)
+    #println("sizeof int : {}", sizeof int)
+    var primes : int ptr = gc_malloc(3000 * sizeof int)
+    if primes == null {
+        #println("failed allocation")
+    } else {
+        #println("primes : {}", primes)
+    }
     var primes_length : int = 0
-    for i = 1, i <= 50, 1.0 {
+    for i : int = 1, i <= 15000, 1 {
         var factors : int = 0
-        for j = 1, j <= i, 1.0 {
+        for j : int = 1, j <= i, 1 {
             if (i % j) == 0 {
                 factors = factors + 1
             }
         }
         if factors == 2 {
-            primes[primes_length] = cast int i
+            // #println("primes_length : {}", primes_length)
+            primes[cast i64 primes_length] = primes_length
             primes_length = primes_length + 1
-            primes = gc_realloc(primes,  (primes_length + 1) * sizeof int)
+            // primes = gc_realloc(primes,  (primes_length + 1) * sizeof int)
         }
     }
-    for i = 0, i < primes_length, 1.0 {
+    #println("primes_length at end : {}", primes_length)
+    for i : int = 0, i < primes_length, 1 {
 		printf("%i ", primes[i])
 	}
+    gc_free(primes)
     var time_nb : double = time::get() - start
-    printf("\nCompleted in: %.3fs\n", time_nb/1000)
+    printf("\nCompleted in: %.3fs\n", time_nb/(cast double 1000))
     0
 }
