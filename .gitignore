@@ -5,3 +5,5 @@ Rust/target
 *.out
 *.s
 out.c
+*.cmi
+*.cmx
