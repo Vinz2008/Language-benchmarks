@@ -1,5 +1,5 @@
 let get_current_timestamp () : float =
-  Unix.time () ;;
+  Sys.time () ;;
 
 let start = get_current_timestamp () in 
 let num = 2000000000 in 

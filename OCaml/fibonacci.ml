@@ -1,5 +1,5 @@
 let get_current_timestamp () : float =
-  Unix.time () ;;
+    Sys.time () ;;
 
 let rec fib n = if n <= 1 then n else fib n-1 + fib n-2;;
 
