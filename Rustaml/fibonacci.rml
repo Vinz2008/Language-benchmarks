@@ -1,0 +1,11 @@
+// TODO : get timestamp
+
+let fib n = if n <= 1 then n else fib (n-1) + fib (n-2) ;;
+
+let calc_loop idx = if idx == 51 then 0 else 
+  // not working for now
+  let _ = print (format "{} {}" idx (fib idx)) in 
+  let f = fib idx in 
+  calc_loop (idx + 1);;
+
+let calc = calc_loop 1 ;;

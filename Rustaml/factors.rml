@@ -1,0 +1,12 @@
+// TODO : add support for global constants for num (look at c)
+// TODO : fix operator precedence ? (with + and %, and ==)
+
+let loop idx = 
+    if idx == (2000000000 + 1) then ()
+    else 
+      let _ = if (2000000000 % idx) == 0 then
+      print (format "{} is a factor of {}" idx 2000000000)
+    else 
+      () in loop (idx + 1) ;;
+
+let _ = loop 1 ;;
