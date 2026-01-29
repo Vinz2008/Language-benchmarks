@@ -1,0 +1,18 @@
+let get_factors_nb idx nb = 
+  if idx > nb then 
+    0
+  else 
+    let inc = if (nb % idx) == 0 then 1 else 0 in
+    inc + (get_factors_nb (idx + 1) nb) ;;
+
+let get_primes idx = 
+  if idx == 15000 then
+    []
+  else 
+    if (get_factors_nb 1 idx) == 2 then
+      idx :: get_primes (idx + 1)
+    else get_primes (idx + 1) ;;
+
+let primes = get_primes 1 ;;
+// TODO : is this acceptable ? (not the same format as others, or write a loop manually and add a function to print without new line ?)
+let _ = print primes ;;
