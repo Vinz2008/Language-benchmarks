@@ -17,7 +17,10 @@ function primes() {
 		}
 	}
 
-	console.log(primes);
+	console.dir(primes, {'maxArrayLength': null});
 		
 	console.log(`Time taken: ${(performance.now()-start)/1000}s`);
 }
+
+module.exports.primes = primes;
+// for NodeJS
